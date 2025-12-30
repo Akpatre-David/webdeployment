@@ -20,6 +20,6 @@ jobs:
         run: |
           echo | docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Docker Push to Dockerhub
+      - name: Docker Push to Docker hub
         run: |
           docker push 17CsC/028/portfolio:latest
