@@ -14,3 +14,4 @@ deploymentKey
 
 # Environment files
 env
+*.env
