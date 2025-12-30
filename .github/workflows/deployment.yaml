@@ -16,7 +16,7 @@ jobs:
         run: |
           docker build -t 17csc028/portfolio .
 
-      - name: Docker Login
+      - name: Docker Login Part
         run: |
           echo | docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
