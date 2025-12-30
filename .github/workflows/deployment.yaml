@@ -14,7 +14,7 @@ jobs:
 
       - name: Build project
         run: |
-          npm run build -t 17CsC/028/portfolio:latest
+          npm run build -t 17csc028/portfolio:latest
 
       - name: Docker Login
         run: |
@@ -22,4 +22,4 @@ jobs:
 
       - name: Docker Push to Docker hub.
         run: |
-          docker push 17CsC/028/portfolio:latest
+          docker push 17csc028/portfolio:latest
