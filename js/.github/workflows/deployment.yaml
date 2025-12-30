@@ -1,0 +1,25 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploymentjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: |
+          npm run build -t 17CsC/028/portfolio:latest
+
+      - name: Docker Login
+        run: |
+          echo | docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Docker Push to Dockerhub
+        run: |
+          docker push 17CsC/028/portfolio:latest
