@@ -1,0 +1,16 @@
+# Terraform state files
+*.tfstate
+*.tfstate.backup
+
+# Terraform directory
+.terraform/
+
+# Terraform lock file
+.terraform.lock.hcl
+
+# SSH keys
+deploymentKey
+*.pub
+
+# Environment files
+env
