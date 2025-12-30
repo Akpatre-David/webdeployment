@@ -14,7 +14,7 @@ jobs:
 
       - name: Build project
         run: |
-          npm run build -t 17csc028/portfolio .
+          npm build -t 17csc028/portfolio .
 
       - name: Docker Login
         run: |
