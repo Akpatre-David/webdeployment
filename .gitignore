@@ -26,3 +26,4 @@ env
 .terraform/
 *.tfstate
 *.tfstate.*
+.lock.hcl
