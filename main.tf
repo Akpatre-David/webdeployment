@@ -10,7 +10,7 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Security Group: SSH + HTTP
+
 resource "aws_security_group" "web_sg" {
   name        = "allow_ssh_http"
   description = "Allow SSH and HTTP access"
@@ -39,7 +39,7 @@ resource "aws_security_group" "web_sg" {
   }
 }
 
-# Key Pair (replace with your public key path)
+
 resource "aws_key_pair" "deploymentKey" {
   key_name   = "portfolio-key"
   public_key = file("/home/davidubuntu/Desktop/porfoliodeploy/deploymentKey.pub")
@@ -47,12 +47,11 @@ resource "aws_key_pair" "deploymentKey" {
 
 # EC2 Instance
 resource "aws_instance" "web" {
-  ami                    = "ami-0ecb62995f68bb549" # ubuntu
+  ami                    = "ami-0ecb62995f68bb549" 
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.web_sg.id]
-  key_name               = aws_key_pair.deploymentKey.key_name
+  key_name                = aws_key_pair.deploymentKey.key_name
 
-  # User data to install Docker and run your static site container
   user_data = <<-EOF
               #!/bin/bash
               apt-get update -y
@@ -68,7 +67,7 @@ resource "aws_instance" "web" {
   }
 }
 
-# Output Public IP
+
 output "public_ip" {
   value = aws_instance.web.public_ip
 }

@@ -6,7 +6,7 @@
 .terraform/
 
 # Terraform lock file
-.terraform.lock.hcl
+*.terraform.lock.hcl
 
 # SSH keys
 deploymentKey
@@ -15,3 +15,11 @@ deploymentKey
 # Environment files
 env
 *.env
+
+.terraform/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
