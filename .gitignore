@@ -12,7 +12,7 @@
 deploymentKey
 *.pub
 
-# Environment files
+
 env
 *.env
 
